@@ -91,15 +91,31 @@ body {
             max-height: 90px;
         }
     }
-    .navbar-nav>li>a.aKoszyk {
+    
+    .navbar-nav {
+         @media(max-width: 768px){
+        
+    position: fixed;
+    right: 0;
+        }
+    &>li.aKoszyk {
+        @media(min-width: 768px){
+            display: none;
+            padding-top:0;
+           
+        }
+        &:first-child{
+            display: block;
+           
+            
+        }
         .style-navbox;
         @media(max-width: 768px) {
             border-radius: 0;
-            display: inline-block;
-            position: fixed;
-            right: 0;
+            display: block;
         }
     }
+}
     .simpleCart_items {
         img {
             height: 64px;
@@ -115,6 +131,7 @@ body {
     .table.table-striped thead>tr>td {
         font-weight: 700;
     }
+    
     .modal-dialog {
         table {
             min-width: 495px;
@@ -306,6 +323,9 @@ body {
 .modal-backdrop {
     z-index: 1000;
 }
+.modal-open .modal {
+        overflow-x: scroll;
+    }
 
 .mix {
     display: none;
